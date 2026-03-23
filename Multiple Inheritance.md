@@ -1,10 +1,10 @@
-# Exp.No:24  
-## Multi-level Inheritance
+# Exp.No:23  
+## Multiple Inheritance
 
 ---
 
 ### AIM  
-To write a Python program that collects a person's name, age, and salary, and displays them using multilevel inheritance in object-oriented programming.
+To write a Python program using multiple inheritance to get a student’s name, attendance, and ID (grade), and determine if the student is eligible for placement based on their grade.
 
 ---
 
@@ -12,72 +12,68 @@ To write a Python program that collects a person's name, age, and salary, and di
 
 Start the program.
 
-Define class a (base class):
+Define class A:
 
-In the constructor __init__(), get input for:
+In the constructor __init__(), accept input for:
 
-x → Name (string)
+n: Student's name
 
-a → Age (integer)
+a: Student's attendance
 
-b → Salary (integer)
+i: Student's ID (grade)
 
-Define class b inheriting from a:
+Define class B inheriting from A:
 
-Define dis1() to return name.
+Define disp1() to print the name and attendance.
 
-Define class c inheriting from a:
+Define class C inheriting from A:
 
-Define dis2() to return age.
+Define disp2() to check if grade (i) is greater than 90:
 
-Define class d inheriting from a:
+If yes, print “Eligible for Placement”.
 
-Define dis3() to return salary.
+Else, print “Not Eligible for Placement”.
 
-Define class e inheriting from b, c, and d:
+Define class D that inherits from both B and C (multiple inheritance).
 
-Use pass since it inherits everything needed.
+Create an object o of class D.
 
-Create an object y of class e.
+Call disp1() to display name and attendance.
 
-Print the outputs from dis1(), dis2(), and dis3().
+Call disp2() to check placement eligibility.
 
 End the program.
-
-
 
 ---
 
 ### PROGRAM
 
 ```
-class a:
+class A:
     def __init__(self):
-        self.x=input()
+        self.n=input()
         self.a=int(input())
-        self.b=int(input())
-        
-class b(a):
-    def dis1(self):
-        return self.x
-    
-class c(a):
-    def dis2(self):
-        return self.a    
-class d(a):
-    def dis3(self):
-        return self.b
-        
-class e(b,c,d):
+        self.i=int(input())
+class B(A):
+    def disp1(self):
+        print(self.n)
+        print(self.a)
+class C(A):
+    def disp2(self):
+        if(self.i>90):
+            print("Eligible for Placement")
+        else:
+            print("Not Eligible for Placement")
+class D(B,C):
     pass
-
-y=e()
-print(y.dis1() ,y.dis2() ,y.dis3())
-
+o=D()
+o.disp1()
+o.disp2()
 ```
 
 ### OUTPUT
-![Screenshot (246)](https://github.com/user-attachments/assets/1084666a-d809-4a21-b748-0d29c8ee1a06)
+![Screenshot (245)](https://github.com/user-attachments/assets/aa77c616-3c5f-4e1d-9464-76763c4fd43b)
+
 
 ### RESULT
-Thus the python program was initiated and implemented successgully.
+Thus the python program was initiated and executed successfully.
